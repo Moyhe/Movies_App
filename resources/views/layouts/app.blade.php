@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/b89b4b2308.js" crossorigin="anonymous"></script>
-
+        <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
         <!-- Scripts -->
         @livewireStyles
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,5 +26,7 @@
             @include('layouts.footer')
         </div>
         @livewireScripts
+
     </body>
+
 </html>
