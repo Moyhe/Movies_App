@@ -54,7 +54,7 @@ class ActorViewModel extends ViewModel
                     : 'https://via.placeholder.com/185x278',
                 // 'title' => $title,
                 'title' => $this->TvOrMovie($movie),
-                'linkToPage' => $movie['media_type'] === 'movie' ? route('movies.show', $movie['id']) : route('tv.show', $movie['id'])
+                'linkToPage' => $movie['media_type'] === 'movie' ? route('movies.show', $movie['id']) : route('tvs.show', $movie['id'])
             ])->only([
                 'poster_path', 'title', 'id', 'media_type', 'linkToPage',
             ]);
@@ -73,7 +73,7 @@ class ActorViewModel extends ViewModel
                 'release_year' => $this->releaseDateFormate($movie) ? Carbon::parse($this->releaseDateFormate($movie))->format('Y') : 'Future',
                 'title' => $this->TvOrMovie($movie),
                 'character' => isset($movie['character']) ? $movie['character'] : '',
-                'linkToPage' => $movie['media_type'] === 'movie' ? route('movies.show', $movie['id']) : route('tv.show', $movie['id']),
+                'linkToPage' => $movie['media_type'] === 'movie' ? route('movies.show', $movie['id']) : route('tvs.show', $movie['id']),
             ])->only([
                 'release_date', 'release_year', 'title', 'character', 'linkToPage',
             ]);
