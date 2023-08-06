@@ -16,8 +16,8 @@
         @livewireStyles
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased dark">
-        <div class="min-h-screen bg-gray-100 dark:text-white dark:bg-gray-900">
+    <body class="font-sans antialiased" x-data  :class="$store.toggle.theme">
+        <div class="min-h-screen bg-white dark:text-white dark:bg-gray-900" >
             @include('layouts.navigation')
             <!-- Page Content -->
             <main>

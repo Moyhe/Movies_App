@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\ViewModels\TvShowViewModel;
-use App\ViewModels\TvsShowViewModel;
+use App\ViewModels\TvViewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -29,13 +29,13 @@ class TvController extends Controller
         ->json()['genres'];
 
 
-        $viewModel = new TvsShowViewModel(
+        $viewModels = new TvViewModel(
             $popularTv,
             $topRatedTv,
-            $genres,
+            $genres
         );
 
-        return view('tvs.index', $viewModel);
+        return view('tvs.index', $viewModels);
     }
 
 

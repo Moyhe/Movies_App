@@ -2,13 +2,11 @@
 
 namespace App\ViewModels;
 
-use Illuminate\Support\Carbon;
+use Carbon\Carbon;
 use Spatie\ViewModels\ViewModel;
 
-class TvsShowViewModel extends ViewModel
+class TvViewModel extends ViewModel
 {
-
-
     public $popularTv;
     public $topRatedTv;
     public $genres;
@@ -20,15 +18,14 @@ class TvsShowViewModel extends ViewModel
         $this->genres = $genres;
     }
 
-
     public function popularTv()
     {
-        return $this->formatTv($this->popularTv());
+        return $this->formatTv($this->popularTv);
     }
 
     public function topRatedTv()
     {
-        return $this->formatTv($this->topRatedTv());
+        return $this->formatTv($this->topRatedTv);
     }
 
     public function genres()
@@ -38,23 +35,21 @@ class TvsShowViewModel extends ViewModel
         });
     }
 
-
-    private function formatTv($movies)
+    private function formatTv($tv)
     {
-        return collect($movies)->map(function($movie) {
-            $genresFormatted = collect($movie['genre_ids'])->mapWithKeys(function($value) {
+        return collect($tv)->map(function($tvshow) {
+            $genresFormatted = collect($tvshow['genre_ids'])->mapWithKeys(function($value) {
                 return [$value => $this->genres()->get($value)];
             })->implode(', ');
 
-            return collect($movie)->merge([
-                'poster_path' => 'https://image.tmdb.org/t/p/w500/'.$movie['poster_path'],
-                'vote_average' => $movie['vote_average'] * 10 .'%',
-                'first_air_date' => Carbon::parse($movie['first_air_date'])->format('M d, Y'),
+            return collect($tvshow)->merge([
+                'poster_path' => 'https://image.tmdb.org/t/p/w500/'.$tvshow['poster_path'],
+                'vote_average' => $tvshow['vote_average'] * 10 .'%',
+                'first_air_date' => Carbon::parse($tvshow['first_air_date'])->format('M d, Y'),
                 'genres' => $genresFormatted,
             ])->only([
                 'poster_path', 'id', 'genre_ids', 'name', 'vote_average', 'overview', 'first_air_date', 'genres',
             ]);
         });
     }
-
 }

@@ -1,4 +1,4 @@
-<div class="movie-info border-b border-gray-800">
+<div class="movie-info border-b dark:border-gray-800">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
         <div class="flex-none">
             <img src="{{ $tvShow['poster_path'] }}" alt="poster" class="w-64 lg:w-96">
@@ -12,24 +12,24 @@
                   </svg>
 
 
-                <span class="ml-1">{{ $tvShow['vote_average'] }}</span>
-                <span class="mx-2">|</span>
-                <span>{{ $tvShow['first_air_date'] }}</span>
-                <span class="mx-2">|</span>
-                <span>{{ $tvShow['genres'] }}</span>
+                <span class="ml-1 text-gray-800 dark:text-gray-300">{{ $tvShow['vote_average'] }}</span>
+                <span class="mx-2 text-gray-800 dark:text-gray-300">|</span>
+                <span class="text-gray-800 dark:text-gray-300">{{ $tvShow['first_air_date'] }}</span>
+                <span class="mx-2 text-gray-800 dark:text-gray-300">|</span>
+                <span class="text-gray-800 dark:text-gray-300">{{ $tvShow['genres'] }}</span>
             </div>
 
-            <p class="text-gray-300 mt-8">
+            <p class="dark:text-gray-300 mt-8">
                 {{ $tvShow['overview'] }}
             </p>
 
             <div class="mt-12">
-                <h4 class="text-white font-semibold">Featured Crew</h4>
+                <h4 class="dark:text-white font-semibold">Featured Crew</h4>
                 <div class="flex mt-4">
                     @foreach ($tvShow['created_by'] as $crew)
                         <div class="mr-8">
                             <div>{{ $tvShow['name'] }}</div>
-                            <div class="text-sm text-gray-400">{{ $crew['name'] }}</div>
+                            <div class="text-sm dark:text-gray-400">{{ $crew['name'] }}</div>
                         </div>
 
                     @endforeach
@@ -60,12 +60,12 @@
                             class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
                         >
                             <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
-                                <div class="bg-gray-900 rounded">
+                                <div class="dark:bg-gray-900 bg-gray-300 rounded">
                                     <div class="flex justify-end pr-4 pt-2">
                                         <button
                                             @click="isOpen = false"
                                             @keydown.escape.window="isOpen = false"
-                                            class="text-3xl leading-none hover:text-gray-300">&times;
+                                            class="text-3xl leading-none dark:hover:text-gray-300">&times;
                                         </button>
                                     </div>
                                     <div class="modal-body px-8 py-8">
@@ -86,7 +86,7 @@
     </div>
 </div> <!-- end tv-info -->
 
-<div class="movie-cast border-b border-gray-800">
+<div class="movie-cast border-b dark:border-gray-800">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Cast</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -98,7 +98,7 @@
                 </a>
                 <div class="mt-2">
                     <a href="{{ route('actors.show', $cast['id']) }}" class="text-lg mt-2 hover:text-gray:300">{{ $cast['name'] }}</a>
-                    <div class="text-sm text-gray-400">
+                    <div class="text-sm dark:text-gray-400">
                         {{ $cast['character'] }}
                     </div>
                 </div>
@@ -134,12 +134,12 @@
             x-show="isOpen"
         >
             <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
-                <div class="bg-gray-900 rounded">
+                <div class="dark:bg-gray-900 bg-gray-300 rounded">
                     <div class="flex justify-end pr-4 pt-2">
                         <button
                             @click="isOpen = false"
                             @keydown.escape.window="isOpen = false"
-                            class="text-3xl leading-none hover:text-gray-300">&times;
+                            class="text-3xl leading-none dark:hover:text-gray-300">&times;
                         </button>
                     </div>
                     <div class="modal-body px-8 py-8">

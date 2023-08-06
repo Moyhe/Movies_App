@@ -2,7 +2,7 @@
     <input
         wire:model.debounce.500ms="search"
         type="text"
-        class="bg-gray-800 text-sm rounded-full w-64 px-4 pl-8  py-1 focus:outline-none focus:shadow-outline" placeholder="Search (Press '/' to focus)"
+        class="dark:bg-gray-800 bg-gray-200 text-sm rounded-full w-64 px-4 pl-8  py-1 focus:outline-none focus:shadow-outline" placeholder="Search (Press '/' to focus)"
         x-ref="search"
         @keydown.window="
             if (event.keyCode === 191) {
@@ -30,15 +30,15 @@
 
     @if (strlen($search) >= 2)
         <div
-            class="z-50 absolute bg-gray-800 text-sm rounded w-64 mt-4"
+            class="z-50 absolute dark:bg-gray-800 bg-gray-200 text-sm rounded w-64 mt-4"
             x-show.transition.opacity="isOpen"
         >
             @if ($searchResults->count() > 0)
                 <ul>
                     @foreach ($searchResults as $result)
-                        <li class="border-b border-gray-700">
+                        <li class="border-b dark:border-gray-700 border-gray-400">
                             <a
-                                href="{{ route('movies.show', $result['id']) }}" class="block hover:bg-gray-700 px-3 py-3 flex items-center transition ease-in-out duration-150"
+                                href="{{ route('movies.show', $result['id']) }}" class="block dark:hover:bg-gray-700 hover:bg-gray-300 px-3 py-3 flex items-center transition ease-in-out duration-150"
                                 @if ($loop->last) @keydown.tab="isOpen = false" @endif
                             >
                             @if ($result['poster_path'])
@@ -46,7 +46,7 @@
                             @else
                                 <img src="https://via.placeholder.com/50x75" alt="poster" class="w-8">
                             @endif
-                            <span class="ml-4">{{ $result['title'] }}</span>
+                            <span class="ml-4 dark:text-white text-gray-800">{{ $result['title'] }}</span>
                         </a>
                         </li>
                     @endforeach
