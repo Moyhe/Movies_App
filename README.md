@@ -1,6 +1,6 @@
 ## Movie App 
 
-laravel 10 Movie App  with docker,  MySQL, Tailwindcss, livewire and Alpine js.
+laravel 10 Movie App  with docker, Tailwindcss, livewire and Alpine js.
 
 ![My logo](public/images/2023-08-07_03-17.png)
 
