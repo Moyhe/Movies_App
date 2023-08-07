@@ -6,7 +6,7 @@ laravel 10 Movie App  with docker, Tailwindcss, livewire and Alpine js.
 
 ## Demo
 
-   comming soon...
+    https://drive.google.com/file/d/1Yx18xzZGwnNT7PT02mJUDxct_K8KX2FR/view?usp=sharing
 
 ## Installation with docker
 
