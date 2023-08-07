@@ -2,7 +2,7 @@
 
 laravel 10 Movie App  with docker,  MySQL, Tailwindcss and Alpine js.
 
-![My logo](images/2023-08-07_03-17.png)
+![My logo](public/images/2023-08-07_03-17.png)
 
 ## Demo
 
