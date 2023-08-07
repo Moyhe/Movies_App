@@ -27,6 +27,13 @@
     transition: all .7s ease-in-out;
 }
 
+
+
+
 html {
     scroll-behavior: smooth;
+}
+
+.antialiased {
+    transition: all .7s ease-in-out;
 }
