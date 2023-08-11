@@ -47,6 +47,13 @@ Access to the docker container
     php artisan key:generate --ansi
 
 
+## Features
+
+1. searching for movies
+2. backToTop button
+3. theme switcher
+4. infinite scroll
+5. movies, tv shows and actors pages with details for each
 
 
 
