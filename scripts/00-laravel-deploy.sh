@@ -4,16 +4,6 @@ cp /etc/secrets/.env .env
 composer global require hirak/prestissimo
 composer install --no-dev --working-dir=/var/www/html
 
-echo "install node js modules"
-
-apk update
-
-apk add --no-cache npm
-
-npm install
-
-npm run build
-
 echo "Clearing caches..."
 php artisan optimize:clear
 
