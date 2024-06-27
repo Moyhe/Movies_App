@@ -1,12 +1,12 @@
-## Movie App 
+## Movie App
 
-laravel 10 Movie App  with docker, Tailwindcss, livewire and Alpine js.
+laravel 10 Movie App with docker, Tailwindcss, livewire and Alpine js.
 
 ![My logo](public/images/2023-08-07_03-17.png)
 
 ## Demo
 
-    https://drive.google.com/file/d/1Yx18xzZGwnNT7PT02mJUDxct_K8KX2FR/view?usp=sharing
+[video](https://drive.google.com/file/d/1Yx18xzZGwnNT7PT02mJUDxct_K8KX2FR/view?usp=sharing)
 
 ## Installation with docker
 
@@ -29,9 +29,7 @@ Navigate into project folder using terminal and run
 
     cp .env.example .env
 
-
-4.Don't forget to set your TMDB_TOKEN in your .env file. You can get an API key from dashboard  founded [here](https://www.themoviedb.org/).
-
+4.Don't forget to set your TMDB_TOKEN in your .env file. You can get an API key from dashboard founded [here](https://www.themoviedb.org/).
 
 5.Start the project in detached mode
 
@@ -46,7 +44,6 @@ Access to the docker container
 
     php artisan key:generate --ansi
 
-
 ## Features
 
 1. searching for movies
@@ -54,6 +51,3 @@ Access to the docker container
 3. theme switcher
 4. infinite scroll
 5. movies, tv shows and actors pages with details for each
-
-
-
